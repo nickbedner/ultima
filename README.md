@@ -45,7 +45,7 @@ int64 main()
         case 0..4: 10
         case 5 || 7: 20
 
-    // Removes range check for performance
+    // Brackets remove range check for performance
     switch [test_value]
         case 0: print("Poopoo\n")
         case 1: print("One cheek sneak\n")
