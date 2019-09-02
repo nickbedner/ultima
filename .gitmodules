@@ -1,0 +1,3 @@
+[submodule "lib/data-structures-in-c"]
+	path = lib/data-structures-in-c
+	url = https://github.com/Zalrioth/data-structures-in-c
