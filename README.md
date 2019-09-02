@@ -8,15 +8,15 @@ Build with CMake<br/>
 
 ### Infleunces
 
-C - Base of language, many C pragma optimizations core part of Ultima
-C++ - Strings, cross platform threading
-D - Parallelism
-Jai - Data-oriented design
-Java - String concatenation, text output formatting
-Rust - Types, match keyword
-HolyC - Types, switch without range check
-Python - Style, snake case
-Zig - Optimality
+C - Base of language, many C pragma optimizations core part of Ultima<br>
+C++ - Strings, cross platform threading<br>
+D - Parallelism<br>
+Jai - Data-oriented design<br>
+Java - String concatenation, text output formatting<br>
+Rust - Types, match keyword<br>
+HolyC - Types, switch without range check<br>
+Python - Style, snake case<br>
+Zig - Optimality<br>
 
 ### Examples
 
