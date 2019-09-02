@@ -59,10 +59,12 @@ int64 main()
         case 4: print("Hit\n")
 
     // Safetly get out of nested loops without goto or return
-    for (int32 x = 0; x < 10; x++)
-        for (int32 y = 0; y < 10; y++)
-            for (int32 z = 0; z < 10; z++)
-                if (x == 5 && y == 5 && z == 5)
+    for (int32 x = 0; x < 4; x++)
+        for (int32 y = 0; y < 4; y++)
+            for (int32 z = 0; z < 4; z++)
+                print("x: %int32 y: %int32 z: %int32\n", x, y, z)
+                
+                if (x == 2 && y == 2 && z == 2)
                     escape 3 // Go up three loop levels
 
     return 0
