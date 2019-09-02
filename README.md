@@ -50,7 +50,7 @@ int64 main()
         case 1: print("One cheek sneak\n")
         case 2: print("Yadda yadda yadda\n")
 
-    // Switch will fallthrough for things like Duff's device
+    // Fallthrough keyword useful for things like Duff's device
     fallthrough switch (test_value)
         case 0: print("Miss\n")
         case 1: print("Miss\n")
