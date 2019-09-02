@@ -63,7 +63,6 @@ int64 main()
         for (int32 y = 0; y < 4; y++)
             for (int32 z = 0; z < 4; z++)
                 print("x: %int32 y: %int32 z: %int32\n", x, y, z)
-                
                 if (x == 2 && y == 2 && z == 2)
                     escape 3 // Go up three loop levels
 
