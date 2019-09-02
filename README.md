@@ -21,7 +21,6 @@ Zig - Optimality<br>
 ### Examples
 
 ```
-
 int64 main()
     print("Hello World!\n")
 
