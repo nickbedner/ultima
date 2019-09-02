@@ -6,7 +6,7 @@ Ultima is a WIP language designed for system/game programming with an emphasis o
 
 Build with CMake<br/>
 
-### Infleunces
+### Influences
 
 C - Base of language, many C pragma optimizations core part of Ultima<br>
 C++ - Strings, cross platform threading<br>
