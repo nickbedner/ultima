@@ -10,7 +10,7 @@ Build with CMake<br/>
 
 C - Base of language, many C pragma optimizations core part of Ultima<br>
 C++ - Strings, cross platform threading<br>
-D - Array slices<br>
+D - Array slices, variat<br>
 Jai - Data-oriented design, reduced friction<br>
 Java - String concatenation, text output formatting<br>
 Rust - Types, match, tagged union<br>
@@ -65,6 +65,16 @@ int64 main()
         print("x: %int32 y: %int32 z: %int32\n", x, y, z)
         if (x == 2 && y == 2 && z == 2)
           escape 3 // Go up three loop levels
+
+  // Tagged unions are supported through variant
+  struct Menu { void* menu_elements }
+  struct Game { void* game_elements }
+  variant State { struct Menu, struct Game }
+
+  variant State cur_state = (struct Game){ 0 }
+  switch (cur_state)
+    case Menu: print("Current state is menu\n")
+    case Game: print("Current state is game\n")
 
   return 0
 ```
