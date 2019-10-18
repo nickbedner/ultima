@@ -22,7 +22,7 @@ Zig - Optimality<br>
 
 ```
 int64 main()
-print("Hello World!\n")
+  print("Hello World!\n")
 
   // Regular for loop
   for (int32 loop_num = 0; loop_num < 10; loop_num++)
