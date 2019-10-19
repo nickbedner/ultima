@@ -44,12 +44,6 @@ int64 main()
     case 0..4: 10
     case 5 || 7: 20
 
-  // Brackets remove range check for performance
-  switch [test_value]
-    case 0: print("Poopoo\n")
-    case 1: print("One cheek sneak\n")
-    case 2: print("Yadda yadda yadda\n")
-
   // Fallthrough keyword useful for things like Duff's device
   fallthrough switch (test_value)
     case 0: print("Miss\n")
@@ -58,7 +52,13 @@ int64 main()
     case 3: print("Hit\n")
     case 4: print("Hit\n")
 
-  // Safetly get out of nested loops without goto or return
+  // Use jump similar to switch but does not perform a range check for performance
+  jump (test_value)
+    case 0: print("Poopoo\n")
+    case 1: print("One cheek sneak\n")
+    case 2: print("Yadda yadda yadda\n")
+
+  // Safetly get out of nested loops without goto or return with escape
   for (int32 x = 0; x < 4; x++)
     for (int32 y = 0; y < 4; y++)
       for (int32 z = 0; z < 4; z++)
