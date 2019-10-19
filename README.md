@@ -71,10 +71,10 @@ int64 main()
   struct Game { void* game_elements }
   variant State { struct Menu, struct Game }
 
-  variant State cur_state = (struct Game){ 0 }
+  variant State cur_state = (struct Game){ null }
   switch (cur_state)
-    case Menu: print("Current state is menu\n")
-    case Game: print("Current state is game\n")
+    case struct Menu: print("Current state is menu\n")
+    case struct Game: print("Current state is game\n")
 
   return 0
 ```
