@@ -1,5 +1,7 @@
 # Ultima
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Ultima is a WIP language designed for system/game programming with an emphasis on performance, control flow, simplicity, and fast compile times.
 
 ## Getting Started
