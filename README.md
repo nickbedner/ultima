@@ -13,6 +13,7 @@ Build with CMake<br/>
 C - Base of language, many C pragma optimizations core part of Ultima<br>
 C++ - Strings, cross platform threading<br>
 D - Array slices, variant<br>
+GLSL - Vectors, matrices, operators<br>
 Jai - Data-oriented design, reduced friction<br>
 Java - String concatenation, text output formatting<br>
 Rust - Types, match, tagged union<br>
