@@ -1,3 +1,6 @@
-[submodule "lib/data-structures-in-c"]
-	path = lib/data-structures-in-c
-	url = https://github.com/Zalrioth/data-structures-in-c
+[submodule "lib/cstorage"]
+	path = lib/cstorage
+	url = https://github.com/Zalrioth/cstorage
+[submodule "lib/llvm-project"]
+	path = lib/llvm-project
+	url = https://github.com/llvm/llvm-project
