@@ -81,3 +81,9 @@ int64 main()
 
   return 0
 ```
+
+### Thoughts
+
+No int/float must have bits<br>
+64 bit/LLVM only<br>
+C on fire<br>
