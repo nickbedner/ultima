@@ -4,10 +4,13 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.21.27702/**",
-                "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.21.27702/include",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.17763.0/**",
-                "C:/Program Files/LLVM/lib/clang/8.0.0/**"
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/src/**",
+                "${workspaceFolder}/lib/**",
+                "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/include",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/**",
+                "C:/Program Files/LLVM/lib/clang/12.0.0/include/**",
+                "C:/Program Files/llvm-project/clang/lib/Headers/**",
             ],
             "defines": [
                 "_DEBUG",
@@ -22,13 +25,17 @@
             "browse": {
                 "path": [
                     "${workspaceFolder}/**",
-                    "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.21.27702/**",
-                    "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.21.27702/include",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.17763.0/**",
-                    "C:/Program Files/LLVM/lib/clang/8.0.0/**"
+                    "${workspaceFolder}/include/**",
+                    "${workspaceFolder}/src/**",
+                    "${workspaceFolder}/lib/**",
+                    "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/include",
+                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/**",
+                    "C:/Program Files/LLVM/lib/clang/12.0.0/include/**",
+                    "C:/Program Files/llvm-project/clang/lib/Headers/**",
                 ],
                 "limitSymbolsToIncludedHeaders": true
-            }
+            },
+            "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
     "version": 4
