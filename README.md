@@ -93,8 +93,8 @@ f32 square(f32 x) @expression @nodiscard
 struct vec3 alias vec3 {
   f32 x, y, z
 
-  const ZERO = { 0.0f, 0.0f, 0.0f}
-  const ONE =  { 1.0f, 1.0f, 1.0f}
+  const ZERO = { 0.0, 0.0, 0.0}
+  const ONE =  { 1.0, 1.0, 1.0}
   // Note: Think about this, allow reference OR value?
   // Define exactly what will be added, can mix types?
   + (vec3* left, vec3* right) @expression

@@ -3,39 +3,38 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
                 "${workspaceFolder}/include/**",
                 "${workspaceFolder}/src/**",
                 "${workspaceFolder}/lib/**",
-                "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/include",
+                "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/include",
                 "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/**",
-                "C:/Program Files/LLVM/lib/clang/12.0.0/include/**",
-                "C:/Program Files/llvm-project/clang/lib/Headers/**",
+                "C:/llvm-project/build/lib/clang/16.0.0/include/**",
+                "C:/llvm-project/build/include/**",
+                "C:/llvm-project/llvm/include/**",
+                "C:/VulkanSDK/**"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "windowsSdkVersion": "10.0.17763.0",
-            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.21.27702/bin/Hostx64/x64/cl.exe",
-            "cStandard": "c11",
-            "cppStandard": "c++17",
+            "windowsSdkVersion": "10.0.19041.0",
+            "cStandard": "c17",
             "intelliSenseMode": "msvc-x64",
             "browse": {
                 "path": [
-                    "${workspaceFolder}/**",
                     "${workspaceFolder}/include/**",
                     "${workspaceFolder}/src/**",
                     "${workspaceFolder}/lib/**",
-                    "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/include",
+                    "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/include",
                     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/**",
-                    "C:/Program Files/LLVM/lib/clang/12.0.0/include/**",
-                    "C:/Program Files/llvm-project/clang/lib/Headers/**",
+                    "C:/llvm-project/build/lib/clang/16.0.0/include/**",
+                    "C:/llvm-project/build/include/llvm/Config/**",
+                    "C:/llvm-project/llvm/include/**",
+                    "C:/VulkanSDK/**"
                 ],
                 "limitSymbolsToIncludedHeaders": true
-            },
-            "configurationProvider": "ms-vscode.cmake-tools"
+            }
         }
     ],
     "version": 4

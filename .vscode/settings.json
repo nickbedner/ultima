@@ -101,7 +101,7 @@
     },
     "cmake.buildDirectory": "${workspaceFolder}/build",
     "cmake.buildBeforeRun": true,
-    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cStandard": "c17",
     "C_Cpp.errorSquiggles": "Enabled",
     "C_Cpp.loggingLevel": "Debug",
     "C_Cpp.clang_format_style": "{BasedOnStyle: Google, ColumnLimit: 0}",

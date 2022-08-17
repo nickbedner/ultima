@@ -1,74 +1,52 @@
 cmake_minimum_required(VERSION 3.12)
-project(ultima VERSION 0.1.0)
+project(Ultima VERSION 0.1.0)
 
-set(CMAKE_C_STANDARD 11)
-
-message("CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_CXX_STANDARD 17)
+set(ignoreMe "${CMAKE_CXX_COMPILER}")
+set(CMAKE_CXX_COMPILER_WORKS 1)
+set(CMAKE_LINKER "C:/llvm-project/build/bin/lld-link.exe")
+message("CMAKE_LINKER=${CMAKE_LINKER}")
 
 file(GLOB_RECURSE ultima_SRC
         include/*.h
         src/*.c)
 
-add_subdirectory(lib/llvm-project/llvm buildllvm)
+message("CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
 
-SET(OBJS
-        ${CMAKE_CURRENT_SOURCE_DIR}/build/buildllvm/lib/Target/X86/TargetInfo/LLVMX86Info.dir/Debug/X86TargetInfo.obj
-        ${CMAKE_CURRENT_SOURCE_DIR}/build/buildllvm/lib/Target/X86/LLVMX86CodeGen.dir/Debug/X86TargetMachine.obj
-        ${CMAKE_CURRENT_SOURCE_DIR}/build/buildllvm/lib/Target/X86/MCTargetDesc/LLVMX86Desc.dir/Debug/X86MCTargetDesc.obj)
+if(CMAKE_BUILD_TYPE MATCHES Release)
+        include(CheckIPOSupported)
+        check_ipo_supported(RESULT supported OUTPUT error)
+        if(supported)
+                message(STATUS "IPO / LTO enabled")
+                set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
+        else()
+                message(STATUS "IPO / LTO not supported: <${error}>")
+        endif()
+endif()
 
-add_executable(ultima ${OBJS} ${ultima_SRC})
+add_executable(Ultima ${ultima_SRC})
 
-set(ULTIMA_BUILD_LIBRARIES
-        ultima
-        LLVM-C
-        LLVMAnalysis
-        LLVMBitWriter
-        LLVMCore
-        LLVMExecutionEngine
-        LLVMTarget
-        LLVMJITLink)
-        #X86TargetInfo)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -mLLVM")
 
-target_link_libraries(${ULTIMA_BUILD_LIBRARIES})
+set(ULTIMA_BUILD_LIBRARIES Ultima)
+
+add_custom_command (TARGET Ultima POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different "C:/llvm-project/build/bin/LLVM-C.dll" ${CMAKE_CURRENT_BINARY_DIR}/LLVM-C.dll)
+
+target_link_libraries(${ULTIMA_BUILD_LIBRARIES}
+        "C:/llvm-project/build/lib/LLVM-C.lib"
+        "C:/llvm-project/build/lib/LLVMAnalysis.lib"
+        "C:/llvm-project/build/lib/LLVMBitWriter.lib"
+        "C:/llvm-project/build/lib/LLVMCore.lib"
+        "C:/llvm-project/build/lib/LLVMExecutionEngine.lib"
+        "C:/llvm-project/build/lib/LLVMTarget.lib"
+        "C:/llvm-project/build/lib/LLVMJITLink.lib")
 
 set(includeList
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${CMAKE_CURRENT_SOURCE_DIR}/lib/cstorage/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/lib/llvm-project/llvm/include
-        ${CMAKE_CURRENT_SOURCE_DIR}/build/buildllvm/include)
+        "C:/llvm-project/build/lib/clang/16.0.0/include"
+        "C:/llvm-project/build/include",
+        "C:/llvm-project/llvm/include")
 
-target_include_directories(ultima PUBLIC ${includeList})
-
-#cmake_minimum_required(VERSION 3.12)
-#project(ultima VERSION 0.1.0)
-#
-#set(CMAKE_C_STANDARD 11)
-#
-#file(GLOB_RECURSE ultima_SRC
-#        include/*.h
-#        src/*.c)
-#
-#message("CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
-#
-#add_subdirectory(lib/llvm-project/llvm buildllvm)
-#
-#find_package(LLVM REQUIRED CONFIG)
-#add_definitions(${LLVM_DEFINITIONS})
-#include_directories(${LLVM_INCLUDE_DIRS})
-#
-#message(STATUS "LLVM VERSION : ${LLVM_PACKAGE_VERSION}")
-#message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
-#
-#add_executable(ultima ${ultima_SRC})
-#
-#llvm_map_components_to_libnames(llvm_libs support core irreader)
-#
-#set(includeList
-#        ${CMAKE_CURRENT_SOURCE_DIR}/include
-#        ${CMAKE_CURRENT_SOURCE_DIR}/lib/cstorage/include
-#        ${CMAKE_CURRENT_SOURCE_DIR}/lib/llvm-project/llvm/include
-#        ${CMAKE_CURRENT_SOURCE_DIR}/build/buildllvm/include)
-#
-#target_include_directories(ultima PUBLIC ${includeList})
-#
-#target_link_libraries(ultima llvm_libs)
+target_include_directories(Ultima PUBLIC ${includeList})
