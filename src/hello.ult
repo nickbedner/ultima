@@ -4,4 +4,6 @@ i64 main() {
   i32 third_num = first_num + second_num;
 
   print(third_num);
+
+  return 0;
 }
