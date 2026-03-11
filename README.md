@@ -26,96 +26,96 @@ Zig - Optimality<br>
 
 ```
 i64 main()
-  print("Hello World!\n")
+  print("Hello World!\n");
 
   // Regular for loop
   for (i32 loop_num = 0; loop_num < 10; loop_num++)
-    print("Loop num: " + loop_num + "\n")
+    print("Loop num: " + loop_num + "\n");
 
   // Same loop but unrolled
   unroll for (i32 loop_num = 0; loop_num < 10; loop_num++)
-    print("Loop num: " + loop_num + "\n")
+    print("Loop num: " + loop_num + "\n");
 
-  // Now in parallel
+  // Now in parallel similar to openmp
   parallel for (i32 loop_num = 0; loop_num < 10; loop_num++)
-    print("Loop num: " + loop_num + "\n")
+    print("Loop num: " + loop_num + "\n");
 
   // Switches break by default and have many new useful features
-  i8 test_value = 2
+  i8 test_value = 2;
   // Assignment, case ranges, case or
   i8 new_value = switch (test_value)
-    case 0..4: 10
-    case 5 || 7: 20
+    case 0..4: 10;
+    case 5 || 7: 20;
 
   // Fallthrough keyword
   fallthrough switch (test_value)
-    case 0: print("Miss\n")
-    case 1: print("Miss\n")
-    case 2: print("Hit\n")
-    case 3: print("Hit\n")
-    case 4: print("Hit\n")
+    case 0: print("Miss\n");
+    case 1: print("Miss\n");
+    case 2: print("Hit\n");
+    case 3: print("Hit\n");
+    case 4: print("Hit\n");
 
   // Use jump similar to switch but does not perform a range check for performance
   jump (test_value)
-    case 0: print("First jump\n")
-    case 1: print("Second jump\\n")
-    case 2: print("Yadda yadda yadda\n")
+    case 0: print("First jump\n");
+    case 1: print("Second jump\\n");
+    case 2: print("Yadda yadda yadda\n");
 
   // Safetly get out of nested loops without goto or return with escape
   for (i32 x = 0; x < 4; x++)
     for (i32 y = 0; y < 4; y++)
       for (i32 z = 0; z < 4; z++)
-        print("x: %i32 y: %i32 z: %i32\n", x, y, z)
+        print("x: %i32 y: %i32 z: %i32\n", x, y, z);
         if (x == 2 && y == 2 && z == 2)
-          escape 3 // Go up three loop levels
+          escape 3; // Go up three loop levels
 
   // Tagged unions are supported through variant
-  struct Menu { void* menu_elements }
-  struct Game { void* game_elements }
-  variant State { struct Menu, struct Game }
+  struct Menu { void* menu_elements };
+  struct Game { void* game_elements };
+  variant State { struct Menu, struct Game };
 
-  variant State cur_state = (struct Game){ NULL }
+  variant State cur_state = (struct Game){ NULL };
   switch (cur_state)
-    case struct Menu: print("Current state is menu\n")
-    case struct Game: print("Current state is game\n")
+    case struct Menu: print("Current state is menu\n");
+    case struct Game: print("Current state is game\n");
 
   // Junk array
-  i32[1024] array_stuff
+  i32[1024] array_stuff;
 
-  return 0
+  return 0;
 
 // Expression attribute to automatically return value of final function line
 // Nodiscard attribute to provide compiler warning if returned value isn't used
 f32 square(f32 x) @expression @nodiscard
-  x * x
+  x * x;
 
 // Kinda Java/D style hmm, perhaps make this unique to ultima?
 struct vec3 alias vec3 {
-  f32 x, y, z
+  f32 x, y, z;
 
-  const ZERO = { 0.0, 0.0, 0.0}
-  const ONE =  { 1.0, 1.0, 1.0}
+  const ZERO = { 0.0, 0.0, 0.0};
+  const ONE =  { 1.0, 1.0, 1.0};
   // Note: Think about this, allow reference OR value?
   // Define exactly what will be added, can mix types?
   + (vec3* left, vec3* right) @expression
-    { left.x + right.x, left.y + right.y, left.z, + right.z }
+    { left.x + right.x, left.y + right.y, left.z, + right.z };
   + (vec3 left, vec3 right) @expression
-    { left.x + right.x, left.y + right.y, left.z, + right.z }
+    { left.x + right.x, left.y + right.y, left.z, + right.z };
   + (mat3x3 left, vec3 right) @expression
-    { left.x + right.x, left.y + right.y, left.z, + right.z }
+    { left.x + right.x, left.y + right.y, left.z, + right.z };
 
   f32 total() @expression @nodiscard
-    x + y + z
+    x + y + z;
 }
 
 void another_func()
-  vec3 one = vec3.ONE
-  vec3 two = vec3.ONE
+  vec3 one = vec3.ONE;
+  vec3 two = vec3.ONE;
 
-  f32 total = vec.total()
+  f32 total = vec.total();
 
-  vec3 three = one + two
-  f32 first_value = three[0]
+  vec3 three = one + two;
+  f32 first_value = three[0];
 
 ```
 
@@ -134,6 +134,8 @@ Brackets optional indents preferred? Maybe restrict to arrays/struct/unions/vari
 Access struct members like arrays<br>
 No references<br>
 Not for golfing remove {}?<br>
+C style{} for code blocks?<br>
+Enforce semicolon for readability?<br>
 
 * pointer<br>
 & address<br>

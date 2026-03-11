@@ -1,6 +1,0 @@
-language: c
-sudo: false
-script:
-  - cmake --version
-  - cmake CMakeLists.txt
-  - cmake  --build . --target ultima
