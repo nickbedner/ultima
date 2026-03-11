@@ -1,37 +1,25 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "Win64",
             "includePath": [
                 "${workspaceFolder}/include/**",
                 "${workspaceFolder}/src/**",
-                "${workspaceFolder}/lib/**",
-                "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/include",
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/**",
-                "C:/llvm-project/build/lib/clang/16.0.0/include/**",
-                "C:/llvm-project/build/include/**",
-                "C:/llvm-project/llvm/include/**",
-                "C:/VulkanSDK/**"
+                "${workspaceFolder}/lib/**"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "windowsSdkVersion": "10.0.19041.0",
-            "cStandard": "c17",
-            "intelliSenseMode": "msvc-x64",
+            "windowsSdkVersion": "10.0.22000.0",
+            "cStandard": "c23",
+            "intelliSenseMode": "windows-clang-x64",
             "browse": {
                 "path": [
                     "${workspaceFolder}/include/**",
                     "${workspaceFolder}/src/**",
-                    "${workspaceFolder}/lib/**",
-                    "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/include",
-                    "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/**",
-                    "C:/llvm-project/build/lib/clang/16.0.0/include/**",
-                    "C:/llvm-project/build/include/llvm/Config/**",
-                    "C:/llvm-project/llvm/include/**",
-                    "C:/VulkanSDK/**"
+                    "${workspaceFolder}/lib/**"
                 ],
                 "limitSymbolsToIncludedHeaders": true
             }

@@ -1,9 +1,16 @@
 i64 main() {
-  i32 first_num = 0;
-  i32 second_num = 10;
-  i32 third_num = first_num + second_num;
+  i32 a = 2;
+  i32 b = 3;
+  i32 c = a + b;
+  i32 d = c + 4;
+  i32 e = a + 4;
 
-  print(third_num);
+  print(a);  
+  print(b);
+  print(c);
+  print(d);
+  print(e);
+  print(e);
 
   return 0;
 }
