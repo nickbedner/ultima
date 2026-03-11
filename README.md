@@ -25,7 +25,7 @@ Zig - Optimality<br>
 ### Examples
 
 ```
-i64 main()
+i64 main() {
   print("Hello World!\n");
 
   // Regular for loop
@@ -43,31 +43,37 @@ i64 main()
   // Switches break by default and have many new useful features
   i8 test_value = 2;
   // Assignment, case ranges, case or
-  i8 new_value = switch (test_value)
+  i8 new_value = switch (test_value) {
     case 0..4: 10;
     case 5 || 7: 20;
+  }
 
   // Fallthrough keyword
-  fallthrough switch (test_value)
+  fallthrough switch (test_value) {
     case 0: print("Miss\n");
     case 1: print("Miss\n");
     case 2: print("Hit\n");
     case 3: print("Hit\n");
     case 4: print("Hit\n");
+  }
 
   // Use jump similar to switch but does not perform a range check for performance
-  jump (test_value)
+  jump (test_value) {
     case 0: print("First jump\n");
     case 1: print("Second jump\\n");
     case 2: print("Yadda yadda yadda\n");
+  }
 
   // Safetly get out of nested loops without goto or return with escape
-  for (i32 x = 0; x < 4; x++)
-    for (i32 y = 0; y < 4; y++)
-      for (i32 z = 0; z < 4; z++)
+  for (i32 x = 0; x < 4; x++) {
+    for (i32 y = 0; y < 4; y++) {
+      for (i32 z = 0; z < 4; z++) {
         print("x: %i32 y: %i32 z: %i32\n", x, y, z);
         if (x == 2 && y == 2 && z == 2)
           escape 3; // Go up three loop levels
+      }
+    }
+  }
 
   // Tagged unions are supported through variant
   struct Menu { void* menu_elements };
@@ -75,19 +81,22 @@ i64 main()
   variant State { struct Menu, struct Game };
 
   variant State cur_state = (struct Game){ NULL };
-  switch (cur_state)
+  switch (cur_state) {
     case struct Menu: print("Current state is menu\n");
     case struct Game: print("Current state is game\n");
+  }
 
   // Junk array
-  i32[1024] array_stuff;
+  i32[1024] array_stuff = {0};
 
   return 0;
+}
 
 // Expression attribute to automatically return value of final function line
 // Nodiscard attribute to provide compiler warning if returned value isn't used
-f32 square(f32 x) @expression @nodiscard
+f32 square(f32 x) @expression @nodiscard {
   x * x;
+}
 
 // Kinda Java/D style hmm, perhaps make this unique to ultima?
 struct vec3 alias vec3 {
@@ -104,8 +113,9 @@ struct vec3 alias vec3 {
   + (mat3x3 left, vec3 right) @expression
     { left.x + right.x, left.y + right.y, left.z, + right.z };
 
-  f32 total() @expression @nodiscard
+  f32 total() @expression @nodiscard {
     x + y + z;
+  }
 }
 
 void another_func()

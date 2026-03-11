@@ -1,0 +1,7 @@
+i64 main() {
+  i32 first_num = 0;
+  i32 second_num = 10;
+  i32 third_num = first_num + second_num;
+
+  print(third_num);
+}
