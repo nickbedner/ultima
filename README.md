@@ -112,7 +112,7 @@ void another_func()
   vec3 one = vec3.ONE;
   vec3 two = vec3.ONE;
 
-  f32 total = vec.total();
+  f32 total = one.total();
 
   vec3 three = one + two;
   f32 first_value = three[0];
