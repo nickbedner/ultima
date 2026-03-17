@@ -1,6 +1,6 @@
 #pragma once
 
-enum AST_KIND {
+enum ASTKind {
   AST_INT,
   AST_IDENT,
   AST_BINARY,
@@ -12,7 +12,7 @@ enum AST_KIND {
 };
 
 struct Ast {
-  enum AST_KIND kind;
+  enum ASTKind kind;
 
   union {
     // AST_INT

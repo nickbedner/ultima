@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-enum TOKEN_KIND {
+enum TokenKind {
   TOK_INT,
   TOK_IDENT,
   TOK_I32,
@@ -21,7 +21,7 @@ enum TOKEN_KIND {
 };
 
 struct Token {
-  enum TOKEN_KIND kind;
+  enum TokenKind kind;
   const char* start;
   int length;
 };

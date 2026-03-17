@@ -28,7 +28,7 @@ static void skip_whitespace(struct Lexer* l) {
   }
 }
 
-static struct Token make_token(struct Lexer* l, enum TOKEN_KIND kind) {
+static struct Token make_token(struct Lexer* l, enum TokenKind kind) {
   struct Token t;
   t.kind = kind;
   t.start = l->start;
